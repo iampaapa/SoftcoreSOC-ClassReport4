@@ -36,7 +36,6 @@ int main() {
     // 1. instantiate cores
     GpoCore led(get_slot_addr(BRIDGE_BASE, S2_LED));
     SpiCore spi(get_slot_addr(BRIDGE_BASE, S9_SPI));
-    UartCore uart(get_slot_addr(BRIDGE_BASE, S1_UART1));
 
     // 2. initialize SPI
     spi.set_freq(400000); // set SPI clock to 400kHz
@@ -61,22 +60,18 @@ int main() {
             if (x > 0) {
                 // board tilted left -> 270 deg
                 led_pattern = 0b1000; // LED[3]
-                uart.disp("Orientation: 270 deg (Left)\r");
             } else {
                 // board tilted right -> 90 deg
                 led_pattern = 0b0010; // LED[1]
-                uart.disp("Orientation: 90 deg (Right)\r");
             }
         } 
         else if (abs(y) > abs(x) && abs(y) > THRESHOLD) {
             if (y > 0) {
                 // board tilted top-down -> 180 deg
                 led_pattern = 0b0100; // LED[2]
-                uart.disp("Orientation: 180 deg (Inverted)\r");
             } else {
                 // board upright -> 0 deg
                 led_pattern = 0b0001; // LED[0]
-                uart.disp("Orientation: 0 deg (Upright)\r");
             }
         } 
         else {

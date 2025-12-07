@@ -2,6 +2,8 @@
 
 This repo contains the source code and instructions to replicate the **Inclination Sensing Experiment** (Exp 16.8.1).
 
+**Demo Video:** [https://youtube.com/shorts/oy8GMESb3IY](https://youtube.com/shorts/oy8GMESb3IY)
+
 ## Directory Structure
 
   * **`hw/`**: Contains SystemVerilog source code (`hdl/`) and constraints (`constraints/`) for the FPGA.
