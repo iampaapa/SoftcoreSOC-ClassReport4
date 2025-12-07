@@ -75,8 +75,35 @@ To prevent memory mapping errors (which was happening when I was using Vitis dir
 
 1.  Connect the Nexys 4 DDR board via USB and ensure it is powered ON.
 2.  **Tilt the board:**
-      * **Tilt Left:** UART prints "270 deg", LED[3] turns ON.
-      * **Tilt Right:** UART prints "90 deg", LED[1] turns ON.
-      * **Inverted:** UART prints "180 deg", LED[2] turns ON.
-      * **Upright:** UART prints "0 deg", LED[0] turns ON.
+      * **Tilt Left:** LED[3] turns ON.
+      * **Tilt Right:** LED[1] turns ON.
+      * **Inverted:** LED[2] turns ON.
+      * **Upright:** LED[0] turns ON.
       * **Flat:** All 4 LEDs turn ON.
+
+-----
+
+### **Running the Project using the Pre-built Binaries**
+
+To actually run the project without rebuilding the entire hardware and software stack, you can use the pre-compiled artifacts located in the `bin/` directory.
+
+**Files Included:**
+* `mcs_top_sampler.bit`: The complete FPGA bitstream with the C++ application already embedded.
+* `project_inclination.xsa`: The hardware specification file (for Vitis).
+* `inclination_app.elf`: The compiled software executable.
+
+**Steps to use:**
+1.  Connect your **Nexys 4 DDR** board via USB and turn it ON.
+2.  Open **Vivado**.
+3.  Click **Open Hardware Manager** under **Tasks**
+4.  Click **Open Target** -> **Auto Connect**.
+5.  Click **Program Device**.
+6.  Browse to and select `bin/mcs_top_sampler.bit`.
+7.  Click **Program**.
+
+**Expected Results:**
+* LED[3] turns ON when the board is tilted left
+* LED[1] turns ON when the board is tilted right
+* LED[2] turns ON when the board is inverted
+* LED[0] turns ON when the board is upright
+* All 4 LEDs turn ON when the board is flat
