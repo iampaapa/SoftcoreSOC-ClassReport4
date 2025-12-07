@@ -99,7 +99,7 @@ To actually run the project without rebuilding the entire hardware and software 
 4.  Click **Open Target** -> **Auto Connect**.
 5.  Click **Program Device**.
 6.  Browse to and select `bin/mcs_top_sampler.bit`.
-7.  Click **Program**.
+7.  Click **Program device**.
 
 **Expected Results:**
 * LED[3] turns ON when the board is tilted left
